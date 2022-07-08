@@ -1,4 +1,4 @@
-These are automated test cases made for practice.
+Automated test cases made as an exercise in Selenium.
 
 How to run:
 
