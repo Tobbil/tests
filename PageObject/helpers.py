@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 import time
 
-class Helpers():
+class Helpers:
 
     def __init__(self, driver):
 
@@ -13,11 +13,7 @@ class Helpers():
         
     def handle_exceptions(self, object):
 
-            try:
-                element = self.driver.find_element(*object)
-
-            except (StaleElementReferenceException, NoSuchElementException):
-                element = WebDriverWait(self.driver,5).until(EC.presence_of_element_located(object))
+            element = WebDriverWait(self.driver,10).until(EC.presence_of_element_located(object))
                 
             return element
 
